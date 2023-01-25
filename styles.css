@@ -1,0 +1,22 @@
+#grid-container{
+    height:500px;
+    background-color: #fffdd0;
+    width: 500px;
+    display: flex;
+    margin:auto;
+    box-shadow: 5px 5px 5px grey ;
+}
+
+.divCol{
+    display:inline-block;
+    width:6.25%;
+    height:1em;
+    box-sizing:border-box;
+    border:1px solid red; 
+}
+
+.divRow{
+    border:1px solid green;  
+    height:1em;
+    line-height:1em;
+}
