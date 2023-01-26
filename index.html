@@ -9,7 +9,22 @@
 </head>
 <body>
     <h1 style="text-align: center;">Etch-a-Sketch Project!!</h1>
-    <div id="grid-container"></div>
+    <div class="content">
+        <div class="forms"> 
+            <form>
+                <label for="columnsNum">Number of Columns:</label>
+                <input type="text" id="cols" name="cols" size="5"><br><br><br>
+                <label for="rowsNum">Number of rows:</label>
+                <input type="text" id="rows" name="rows" size="5"><br><br>
+            </form>
+            <button>Submit</button>
+        </div>
+        <div class="grid">
+            <div id="grid-container"></div>
+        </div>
+    </div>
+   
+    
     <script src="script.js"></script>
 </body>
 
