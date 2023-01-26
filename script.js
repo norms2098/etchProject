@@ -1,21 +1,16 @@
 var getContainer = document.getElementById('grid-container');
 
 
-function createGrid(elmt){
-    var getContainer = document.getElementById('grid-container');
-    for(let i=0;i<16;i++){
-        var rowDiv=document.createElement('div');
-        rowDiv.className='divRow';
-        for(let j=0;j<16;j++){
-            var columnDiv = document.createElement('div');
-            columnDiv.className = 'divCol';
-            rowDiv.appendChild(columnDiv);
-        }
-        getContainer.appendChild(rowDiv);
+function createGrid(rowsNum,colsNum){
+    let totalCells=rowsNum*colsNum;
+    for(let i=0;i<totalCells;i++){
+        var createCell=document.createElement('div')
+        createCell.className='cell';
+        getContainer.appendChild(createCell)
     }
-    elmt.appendChild(getContainer);      
+    getContainer.style.setProperty(`grid-template-columns`,`repeat(${colsNum},1fr)`) ;
 }
 
-createGrid(document.body)
+createGrid(16,16)
 
 
