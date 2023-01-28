@@ -12,6 +12,13 @@ function createGrid(tot){
     }
     gridContainer.style.setProperty(`grid-template-columns`,`repeat(${tot},1fr)`) ;
     gridContainer.style.setProperty(`grid-template-rows`,`repeat(${tot},1fr)`) ;
+    const cellsInGrid = document.querySelectorAll(".cells");
+
+    cellsInGrid.forEach(cell =>{
+        cell.addEventListener("mouseover",()=>{
+            cell.classList.add("hover-cell");
+        })
+    })
 }
 
 sliderLabel.innerHTML=`${sliderElement.value} X ${sliderElement.value}`;
