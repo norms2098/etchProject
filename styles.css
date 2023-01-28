@@ -2,16 +2,43 @@
 *{
     box-sizing: border-box;    
 }
+body{
+    background-color: #B2CECF;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.forms{
+    height:auto;
+    width: auto;
+    background-color: #957DAD;
+    border-radius: 10px;
+    padding: 40px 40px 40px 40px;
+}
+.forms button{
+    border-radius: 10px;
+    border: none;
+    background-color: #FFDFD3;
+}
+.grid{
+    margin: 20px;
+}
 
 #grid-container{
     height:500px;
-    background-color: #fffdd0;
+    background-color: #E0BBE4;
     width: 500px;
     display: grid;
-    margin:auto;
     box-shadow: 5px 5px 5px grey ;
+
 }
 
-.cell{
+.cells{
     border: 1px solid black;
+}
+.hover-cell{
+    background-color: black;
 }
