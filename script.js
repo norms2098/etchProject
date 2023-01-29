@@ -21,13 +21,13 @@ function createGrid(tot){
     })
 }
 
-sliderLabel.innerHTML=`${sliderElement.value} X ${sliderElement.value}`;
+sliderLabel.innerHTML=`Adjust grid size:<br>${sliderElement.value} X ${sliderElement.value}`;
 createGrid(sliderElement.value);
 
 sliderElement.addEventListener('input',() =>{
     gridContainer.innerHTML="";
     let dimensions = sliderElement.value;
-    sliderLabel.innerHTML=`${dimensions} X ${dimensions}`;
+    sliderLabel.innerHTML=`Adjust grid size:<br>${dimensions} X ${dimensions}`;
     for (let i = 0; i < (dimensions*dimensions); i++) {
         let cell = document.createElement('div');
         cell.className='cells';
@@ -46,11 +46,6 @@ sliderElement.addEventListener('input',() =>{
 });
 
 clearBtn.addEventListener('click',() => {
-    /*const cellsInGrid = document.querySelectorAll(".cells");
-    cellsInGrid.forEach(cell => {
-        cell.style.setProperty("background-color","#E0BBE4");
-        cell.addEventListener("mouseover",()=>{cell.classList.add("hover-cell")});
-    });*/
     gridContainer.innerHTML="";
     createGrid(sliderElement.value);
 });
@@ -58,6 +53,7 @@ clearBtn.addEventListener('click',() => {
 
 resetBtn.addEventListener('click',()=>{
     gridContainer.innerHTML="";
-    sliderLabel.innerHTML=`${sliderElement.defaultValue} X ${sliderElement.defaultValue}`;
+    sliderLabel.innerHTML=`Adjust grid size:<br>${sliderElement.defaultValue} X ${sliderElement.defaultValue}`;
+    sliderElement.value=sliderElement.defaultValue;
     createGrid(sliderElement.defaultValue);
 })
