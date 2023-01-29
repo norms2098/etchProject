@@ -4,6 +4,7 @@ const resetBtn = document.getElementById("resetbtn");
 const sliderLabel=document.querySelector('.slider-label');
 const clearBtn = document.getElementById("clearbtn");
 const rainbowBtn=document.getElementById("rainbowbtn");
+const gradientBtn=document.getElementById("gradientbtn")
 
 function createGrid(tot){
     for(let i=0;i<tot*tot;i++){
@@ -37,10 +38,25 @@ function rainbowModeOn(){
     const rainbowColors=["red","orange","yellow","green","blue","purple"];
     const cellsInGrid = document.querySelectorAll(".cells");
     cellsInGrid.forEach(cell => {
+        
         cell.addEventListener("mouseover",()=>{
-            const colorChoice=Math.floor(Math.random()*rainbowColors.length);
-            cell.style.setProperty('background-color',rainbowColors[colorChoice])
+            let colorCheck = window.getComputedStyle(cell).backgroundColor;
+            if(colorCheck == "rgb(0, 0, 0)"){
+                const colorChoice=Math.floor(Math.random()*rainbowColors.length);
+                cell.style.setProperty('background-color',rainbowColors[colorChoice])
+            }
+
         })
+    })
+}
+
+function gradientModeOn(){
+    const cellsInGrid=document.querySelectorAll(".cells");
+    cellsInGrid.forEach(cell=> {
+            cell.addEventListener("mouseover",()=>{
+                cell.style.setProperty('box-shadow','inset 0 0 100px 100px rgba(255, 255, 255, 0.1)');
+            })
+        
     })
 }
 
@@ -54,5 +70,6 @@ sliderElement.addEventListener('input',() =>{
 });
 
 clearBtn.addEventListener('click',() => {clearGrid()});
-resetBtn.addEventListener('click',()=>{resetGrid()})
+resetBtn.addEventListener('click',()=>{resetGrid()});
 rainbowBtn.addEventListener('click',()=>{rainbowModeOn()});
+gradientBtn.addEventListener('click',()=>{gradientModeOn()});
