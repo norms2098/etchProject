@@ -2,7 +2,7 @@ var gridContainer = document.getElementById('grid-container');
 const sliderElement = document.getElementById("sliderGrid");
 const resetBtn = document.getElementById("resetbtn");
 const sliderLabel=document.querySelector('.slider-label');
-
+const clearBtn = document.getElementById("clearbtn");
 
 function createGrid(tot){
     for(let i=0;i<tot*tot;i++){
@@ -43,9 +43,17 @@ sliderElement.addEventListener('input',() =>{
             cell.classList.add("hover-cell");
         })
     })
-})
+});
 
-
+clearBtn.addEventListener('click',() => {
+    /*const cellsInGrid = document.querySelectorAll(".cells");
+    cellsInGrid.forEach(cell => {
+        cell.style.setProperty("background-color","#E0BBE4");
+        cell.addEventListener("mouseover",()=>{cell.classList.add("hover-cell")});
+    });*/
+    gridContainer.innerHTML="";
+    createGrid(sliderElement.value);
+});
 
 
 resetBtn.addEventListener('click',()=>{
